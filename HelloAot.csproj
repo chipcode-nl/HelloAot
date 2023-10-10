@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <!-- <ItemGroup>
+    <LinkerArg Include="-Wl,-ld_classic" Condition=" '$(Platform)' == 'x64' "/>
+  </ItemGroup> -->
+
+  <Target Name="PrintInfo" BeforeTargets="Build">
+    <Message Text="Configuration=$(Configuration)" Importance="high" />
+    <Message Text="Platform=$(Platform)" Importance="high" />
+    <Message Text="PlatformTarget=$(PlatformName)" Importance="high" />
+    <Message Text="OS Linux" Condition="$([MSBuild]::IsOSPlatform('Linux'))" Importance="high" />
+    <Message Text="OS OSX" Condition="$([MSBuild]::IsOSPlatform('OSX'))" Importance="high" />
+    <Message Text="OS Windows" Condition="$([MSBuild]::IsOSPlatform('Windows'))" Importance="high" />
+  </Target>
+
+</Project>

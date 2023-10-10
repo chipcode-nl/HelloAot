@@ -1,0 +1,7 @@
+# ignore these file in git repository
+
+# these macOS files change frequently and are not needed
+**/.DS_Store
+
+**/tmp
+**/*.tmp
